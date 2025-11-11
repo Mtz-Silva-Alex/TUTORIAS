@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Altas - Tutorías</title>
+<link rel="stylesheet" href="tyle.css">
+</head>
+<body>
+  <h1>Registrar alumno - Tutorías (Altas)</h1>
+
+  <form id="formAltas" method="post" action="altas.php" novalidate>
+    <div class="row">
+      <div>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" required />
+      </div>
+      <div>
+        <label for="apellido">Apellido</label>
+        <input id="apellido" name="apellido" type="text" required />
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email" />
+      </div>
+      <div>
+        <label for="telefono">Teléfono</label>
+        <input id="telefono" name="telefono" type="text" />
+      </div>
+    </div>
+
+    <label for="materia">Materia</label>
+    <input id="materia" name="materia" type="text" required />
+
+    <label for="factor">Factor de riesgo</label>
+    <select id="factor" name="factor" required>
+      <option value="">Selecciona una opcion</option>
+      <option value="No entrega actividades">No entrega actividades</option>
+      <option value="No asiste a clases">No asiste a clases</option>
+      <option value="Problemas de conducta">Problemas de conducta o indisciplina</option>
+      <option value="Socioeconomico">Problemas socioeconómicos</option>
+      <option value="Salud">Problemas de salud</option>
+      <option value="Aprendizaje">Problemas de aprendizaje</option>
+    </select>
+
+    <label for="estrategia">Estrategia de intervención (breve)</label>
+    <select id="estrategia" name="estrategia" required>
+      <option value="">Selecciona una opcion</option>
+      <option value="No entrega actividades">Asesoría académica y evaluación reguladora</option>
+      <option value="No asiste a clases">Recuperación de créditos parciales o finales, mediante trabajos
+académicos.</option>
+      <option value="Problemas de conducta">Actividad pedagógica que el docente responsable considere pertinente.
+(Preguntar cual)</option>
+
+    </select>
+
+    <label for="observacion">Observación (opcional)</label>
+    <textarea id="observacion" name="observacion" rows="3"></textarea>
+
+    <button type="submit">Guardar registro</button>
+<center>
+    <p class="note">Created by: ToroLento (Edson Misael Gomez Gaytan) <br>
+       Alex (Silvestre Alejandro Martinez Contreras)</p>
+ </center> </form>
+
+  <script>
+    // Validación mínima cliente
+    document.getElementById('formAltas').addEventListener('submit', function(e){
+      var nombre = document.getElementById('nombre').value.trim();
+      var materia = document.getElementById('materia').value.trim();
+      var factor = document.getElementById('factor').value;
+      if(!nombre || !materia || !factor){
+        alert('Por favor completa Nombre, Materia y Factor de riesgo.');
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
