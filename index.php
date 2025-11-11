@@ -70,10 +70,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $id = $stmt->insert_id;
         echo "<h2>Registro guardado correctamente</h2>";
         echo "<p>ID: <strong>$id</strong></p>";
-        echo "<p><a href='altas.html'>Agregar otro</a> | <a href='listado.php'>Ver listado</a> (opcional)</p>";
+        echo "<p><a href='index.html'>Agregar otro</a> | <a href='listado.php'>Ver listado</a> (opcional)</p>";
     } else {
         echo "<p style='color:red;'>Error al guardar: " . htmlspecialchars($stmt->error) . "</p>";
-        echo "<p><a href='altas.html'>Volver</a></p>";
+        echo "<p><a href='index.html'>Volver</a></p>";
     }
 
     $stmt->close();
@@ -82,6 +82,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
  
 
-header('Location: altas.html');
+header('Location: index.html');
 exit;
 ?>
+
